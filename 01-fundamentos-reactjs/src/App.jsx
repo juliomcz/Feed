@@ -16,7 +16,7 @@ export function App() {
           <Post
             author="Julio Gabriel"
             content="Lorem du lorem ipsum dolor amet consectetur adipisicing elit."
-          /><br/>
+          />
           <Post
             author="Dra. Katiane Santos"
             content="Lorem du lorem ipsum dolor amet consectetur adipisicing elit."

@@ -1,18 +1,32 @@
 import styles from './Post.module.css';
 
-export function Post(){
+export function Post() {
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://github.com/juliomcz.png"/>
-                    <div className={styles.authorinfo}>
+                    <img className={styles.avatar} src="https://github.com/juliomcz.png" />
+                    <div className={styles.authorInfo}>
                         <strong>Julio Gabriel</strong>
                         <span>Web Developer</span>
                     </div>
-
                 </div>
+
+                <time title="22 de fevereiro às 11:39h" dateTime="2023-02-22 11:39:30">Publicado há 1h</time>
             </header>
+            <div className={styles.content}>
+                <p>Fala galeraa 👋</p>
+
+                <p>Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento daRocketseat. O nome do projeto é DoctorCare 🚀</p>
+
+                <p>👉{' '}<a href=""> Julio.design/doctorcare</a></p>
+
+                <p>
+                    <a href="">#novoprojeto</a>{' '}
+                    <a href="">#nlw</a>{' '}
+                    <a href="">#rocketseat</a>{' '}
+                </p>
+            </div>
         </article>
     )
 }
