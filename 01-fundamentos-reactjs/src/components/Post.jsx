@@ -1,21 +1,32 @@
+import { format ,formatDistanceToNow} from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
-export function Post(props) {
-    console.log(props)
+export function Post({author, publishedAt}) {
+    
+    
+    const publishedDateFormatted = format(publishedAt,  {locale:ptBR
+    })
+
+    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { locale: ptBR,
+        addSuffix: true,
+    })
     return (
         <article className={styles.post}>
             <header>
                 <div className={styles.author}>
-                    <Avatar hasBorder src="https://github.com/juliomcz.png" />
+                    <Avatar src={author.avatarUrl}/>
                     <div className={styles.authorInfo}>
-                        <strong>Julio Gabriel</strong>
-                        <span>Web Developer</span>
+                        <strong>{author.name}</strong>
+                        <span>{author.role}</span>
                     </div>
                 </div>
 
-                <time title="22 de fevereiro às 11:39h" dateTime="2023-02-22 11:39:30">Publicado há 1h</time>
+                <time title="{publishedDateFormatted}" dateTime={publishedAt.toISOString}>
+                    {publishedDateRelativeToNow}
+                </time>
             </header>
             <div className={styles.content}>
                 <p>Fala galeraa 👋</p>
@@ -71,12 +82,12 @@ export function Post(props) {
 /* 
 
 HTML > ESTILIZAÇÃO > FUNÇÃO
-props: {author: "", content: ""} 
-export function Post(props){
-    console.log(props);
+ {author: "", content: ""} 
+export function Post({
+    console.log(;
   return( 
-  <div><strong>{props.author}</strong> 
-  <p>{props.content}</p></div>)
+  <div><strong>{author}</strong> 
+  <p>{content}</p></div>)
 }
 
 

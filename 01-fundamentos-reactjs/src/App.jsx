@@ -23,7 +23,21 @@ const posts = [
     }
   ],
   publishedAt: new Date('2023-02-22 20:00:00'),
-}
+},{id: 2,
+  author:{
+    avatarUrl: "https://github.com/maykbrito.png",
+    name: "Mayk Brito",
+    role: "Educator @Rocketseat"
+  },
+  content:[
+    {type: 'paragraph', content: 'Fala galeraa 👋'},
+    {type: 'paragraph', content:'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento daRocketseat. O nome do projeto é DoctorCare 🚀'},{
+      type: 'link', content: 'Mayk.design/doctorcare'
+    }
+  ],
+  publishedAt: new Date('2023-05-03 20:00:00'),
+},
+
 ]
 
 
